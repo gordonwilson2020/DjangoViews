@@ -1,0 +1,18 @@
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+<li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<form method="GET" action="/blog/">
+<input type="text" name="q" placeholder="Search">
+    </form>
+<h1>Hello World</h1>
+
+    {% for object in object_list %}
+<li>
+    <a href='/blog/{{ object.id }}'>{{ object.title }}</a>
+
+</li>
+{% endfor %}
